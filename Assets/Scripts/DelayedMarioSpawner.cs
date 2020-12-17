@@ -5,18 +5,18 @@ public class DelayedMarioSpawner : MonoBehaviour
 {
     [SerializeField] private float _delayTime;
 
-    private MarioInstantiator[] _spawners;
+    private MarioInstantiator[] _instantiators;
 
     private void Start()
     {
-        _spawners = FindObjectsOfType<MarioInstantiator>();
+        _instantiators = FindObjectsOfType<MarioInstantiator>();
         StartCoroutine(SpawnWithDelay());
     }
     private IEnumerator SpawnWithDelay()
     {
         while (true)
         {
-            foreach (MarioInstantiator instantiator in _spawners)
+            foreach (MarioInstantiator instantiator in _instantiators)
             {
                 instantiator.Spawn();
                 yield return new WaitForSeconds(_delayTime);
