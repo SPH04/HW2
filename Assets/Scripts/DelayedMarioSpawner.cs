@@ -10,7 +10,7 @@ public class DelayedMarioSpawner : MonoBehaviour
     private void Start()
     {
         _instantiators = FindObjectsOfType<MarioInstantiator>();
-        StartCoroutine(SpawnWithDelay());
+        StartCoroutine(SpawnWithDelay()); 
     }
     private IEnumerator SpawnWithDelay()
     {
